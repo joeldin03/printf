@@ -10,21 +10,28 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libftprintf.a
-HDR		= libftprintf.h
+NAME	=	libftprintf.a
+HDR		=	libftprintf.h
 
-COMP	= gcc
-FLAGS	= -Wall -Werror -Wextra
+COMP	=	gcc
+FLAGS	=	-Wall -Werror -Wextra
 
-PREREQ	= $(HDR) Makefile
+PREREQ	=	$(HDR) Makefile
 
-SRC		=
+SRC		=	ft_printf.c 		\
+			ft_putchar_pf.c		\
+			ft_putstr_pf.c		\
+			ft_putnbr_pf.c		\
+			ft_putuint_pf.c		\
+			ft_puthex_pf.c		\
+			ft_putptr_pf.c		\
+			ft_decimaltohex.c	\
 
-OBJS 	= $(SRC:.c=.o)
+OBJS 	=	$(SRC:.c=.o)
 
 all: libft $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):$(OBJS)
 	@ar rc $(NAME) $(OBJS)
 
 %.o: %.c $(PREREQ)
