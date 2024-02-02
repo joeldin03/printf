@@ -6,7 +6,7 @@
 #    By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 12:43:44 by joelozan          #+#    #+#              #
-#    Updated: 2024/01/25 16:53:15 by joelozan         ###   ########.fr        #
+#    Updated: 2024/02/02 19:22:12 by joelozan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 HDR = libft.h
 
-COMP = gcc
+COMP = cc
 
 FLAGS = -Wall -Werror -Wextra
 

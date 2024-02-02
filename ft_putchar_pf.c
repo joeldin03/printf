@@ -1,7 +1,19 @@
-#include "libftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/02 17:43:11 by joelozan          #+#    #+#             */
+/*   Updated: 2024/02/02 18:04:47 by joelozan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_putchar_pf(char c, size_t *counter)
+#include "ft_printf.h"
+
+void	ft_putchar_pf(char c, size_t *counter)
 {
-    write (1, &c, 1);
-    (*counter)++;
+	write (1, &c, 1);
+	(*counter)++;
 }

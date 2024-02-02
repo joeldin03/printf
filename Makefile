@@ -6,14 +6,14 @@
 #    By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 16:14:17 by joelozan          #+#    #+#              #
-#    Updated: 2024/01/31 18:24:52 by joelozan         ###   ########.fr        #
+#    Updated: 2024/02/02 19:39:14 by joelozan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
-HDR		=	libftprintf.h
+HDR		=	ft_printf.h
 
-COMP	=	gcc
+COMP	=	cc
 FLAGS	=	-Wall -Werror -Wextra
 
 PREREQ	=	$(HDR) Makefile
@@ -35,7 +35,7 @@ $(NAME):$(OBJS)
 	@ar rc $(NAME) $(OBJS)
 
 %.o: %.c $(PREREQ)
-	$(COMP) $(FLAGS) -c $< -o $@
+	$(COMP) $(FLAGS) -c $< -o $@ 
 
 libft:
 	$(MAKE) -C libft
