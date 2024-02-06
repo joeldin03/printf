@@ -12,6 +12,23 @@
 
 #include "ft_printf.h"
 
+static int	len_number(long n)
+{
+	int	len;
+
+	len = 0;
+	if (n < 0)
+		n = -n;
+	if (!n)
+		return (1);
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
 int	ft_putuint_pf(unsigned int n)
 {
 	unsigned long	longn;

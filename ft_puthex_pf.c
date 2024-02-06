@@ -14,10 +14,11 @@
 
 int	ft_puthex_pf(unsigned int n, char *base)
 {
-	char	*s;
+	int	counter;
 
-	s = decimaltohex(n, base);
-	ft_putstr_pf(s);
-	free(s);
-	return (len_hexnumber(n));
+	counter = 0;
+	if (n >= 16)
+		counter += ft_puthex_pf(n / 16, base);
+	counter += ft_putchar_pf(*(base + (n % 16)));
+	return (counter);
 }

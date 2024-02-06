@@ -19,7 +19,7 @@ int	ft_checkformat(va_list arg, char *s)
 	else if (*s == 's')
 		return (ft_putstr_pf(va_arg(arg, char *)));
 	else if (*s == 'p')
-		ft_putptr_pf(va_arg(arg, void *));
+		return (ft_putptr_pf(va_arg(arg, void *)));
 	else if (*s == 'i' || *s == 'd')
 		return (ft_putnbr_pf(va_arg(arg, int)));
 	else if (*s == 'u')

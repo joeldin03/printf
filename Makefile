@@ -25,7 +25,6 @@ SRC		=	ft_printf.c 		\
 			ft_putuint_pf.c		\
 			ft_puthex_pf.c		\
 			ft_putptr_pf.c		\
-			ft_utils.c			\
 
 OBJS 	=	$(SRC:.c=.o)
 
