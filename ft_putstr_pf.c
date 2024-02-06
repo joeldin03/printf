@@ -12,11 +12,16 @@
 
 #include "ft_printf.h"
 
-void	ft_putstr_pf(char *s, size_t *counter)
+int	ft_putstr_pf(char *s)
 {
+	int	counter;
+
+	counter = 0;
 	while (*s)
 	{
-		ft_putchar_pf(*s, counter);
+		ft_putchar_pf((int)*s);
 		s++;
+		counter++;
 	}
+	return (counter);
 }

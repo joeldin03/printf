@@ -12,17 +12,19 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr_pf(int n, size_t *counter)
+int	ft_putnbr_pf(int n)
 {
-	long	longn;
-
-	longn = n;
-	if (longn < 0)
-	{
-		ft_putchar_pf('-', counter);
-		ft_putnbr_pf(-n, counter);
-	}
-	if (longn >= 10)
-		ft_putnbr_pf(n / 10, counter);
-	ft_putchar_pf('0' + longn % 10, counter);
+    int counter;
+	
+	if (n == -2147483648)
+    	return (ft_putstr_pf("-2147483648"));
+	counter = 0;
+    if (n < 0)
+    {
+        counter += ft_putchar_pf('-');
+        n = -n;
+    }
+    if (n >= 10)
+        counter += ft_putnbr_pf(n / 10);
+    return (counter + ft_putchar_pf('0' + n % 10));
 }

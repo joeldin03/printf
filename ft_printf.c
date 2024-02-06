@@ -12,24 +12,25 @@
 
 #include "ft_printf.h"
 
-void	ft_checkformat(va_list arg, char *s, size_t *counter)
+int	ft_checkformat(va_list arg, char *s)
 {
 	if (*s == 'c')
-		ft_putchar_pf(va_arg(arg, int), counter);
+		return (ft_putchar_pf(va_arg(arg, int)));
 	else if (*s == 's')
-		ft_putstr_pf(va_arg(arg, char *), counter);
+		return (ft_putstr_pf(va_arg(arg, char *)));
 	else if (*s == 'p')
-		ft_putptr_pf(va_arg(arg, void *), counter);
+		ft_putptr_pf(va_arg(arg, void *));
 	else if (*s == 'i' || *s == 'd')
-		ft_putnbr_pf(va_arg(arg, int), counter);
+		return (ft_putnbr_pf(va_arg(arg, int)));
 	else if (*s == 'u')
-		ft_putuint_pf(va_arg(arg, unsigned int), counter);
+		return (ft_putuint_pf(va_arg(arg, unsigned int)));
 	else if (*s == 'x')
-		ft_puthex_pf(va_arg(arg, unsigned int), counter, HEX_LC);
+		return (ft_puthex_pf(va_arg(arg, unsigned int), HEX_LC));
 	else if (*s == 'X')
-		ft_puthex_pf(va_arg(arg, unsigned int), counter, HEX_UC);
+		return (ft_puthex_pf(va_arg(arg, unsigned int), HEX_UC));
 	else if (*s == '%')
-		ft_putchar_pf(*s, counter);
+		return (ft_putchar_pf(*s));
+	return (-1);
 }
 
 int	ft_printf(char const *s, ...)
@@ -38,7 +39,7 @@ int	ft_printf(char const *s, ...)
 	size_t	counter;
 
 	if (!s)
-		return (0);
+		return (-1);
 	counter = 0;
 	va_start(arg, s);
 	while (*s)
@@ -46,10 +47,10 @@ int	ft_printf(char const *s, ...)
 		if (*s == '%')
 		{
 			s++;
-			ft_checkformat(arg, (char *)s, &counter);
+			counter += ft_checkformat(arg, (char *)s);
 		}
 		else
-			ft_putchar_pf(*s, &counter);
+			counter += ft_putchar_pf(*s);
 		s++;
 	}
 	va_end(arg);

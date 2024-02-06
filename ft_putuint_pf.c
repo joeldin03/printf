@@ -12,12 +12,13 @@
 
 #include "ft_printf.h"
 
-void	ft_putuint_pf(unsigned int n, size_t *counter)
+int	ft_putuint_pf(unsigned int n)
 {
 	unsigned long	longn;
 
 	longn = n;
 	if (longn >= 10)
-		ft_putuint_pf(n / 10, counter);
-	ft_putchar_pf('0' + longn % 10, counter);
+		ft_putuint_pf(n / 10);
+	ft_putchar_pf('0' + longn % 10);
+	return (len_number(n));
 }

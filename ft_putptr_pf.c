@@ -12,14 +12,14 @@
 
 #include "ft_printf.h"
 
-void	ft_putptr_pf(void *ptr, size_t *counter)
+void	ft_putptr_pf(void *ptr)
 {
 	size_t	address;
 	char	*s;
 
 	address = (unsigned long)ptr;
-	s = ft_decimaltohex(address, HEX_LC);
-	ft_putstr_pf("0x", counter);
-	ft_putstr_pf(s, counter);
+	s = decimaltohex(address, HEX_LC);
+	ft_putstr_pf("0x");
+	ft_putstr_pf(s);
 	free(s);
 }

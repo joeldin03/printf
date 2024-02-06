@@ -15,16 +15,20 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
+# define DEC    "0123456789"
 # define HEX_LC "0123456789abcdef"
 # define HEX_UC "0123456789ABCDEF"
 
 int		ft_printf(char const *s, ...);
-void	ft_putchar_pf(char c, size_t *counter);
-void	ft_putstr_pf(char *s, size_t *counter);
-void	ft_putnbr_pf(int n, size_t *counter);
-void	ft_putuint_pf(unsigned int n, size_t *counter);
-char	*ft_decimaltohex(unsigned int n, char *base);
-void	ft_puthex_pf(unsigned int n, size_t *counter, char *base);
-void	ft_putptr_pf(void *ptr, size_t *counter);
+int	    ft_putchar_pf(char c);
+int	    ft_putstr_pf(char *s);
+int	    ft_putnbr_pf(int n);
+int	    ft_putuint_pf(unsigned int n);
+int 	ft_puthex_pf(unsigned int n, char *base);
+void 	ft_putptr_pf(void *ptr);
+
+int	    len_number(long n);
+int     len_hexnumber(unsigned int n);
+char	*decimaltohex(unsigned int n, char *base);
 
 #endif
