@@ -6,7 +6,7 @@
 /*   By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:40:58 by joelozan          #+#    #+#             */
-/*   Updated: 2024/02/07 19:41:43 by joelozan         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:58:11 by joelozan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_printf(char const *s, ...)
 
 	va_start(ap, s);
 	i = 0;
-	print_count = 0;		
+	print_count = 0;
 	len_print = 0;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:46:23 by joelozan          #+#    #+#             */
-/*   Updated: 2024/02/02 18:01:53 by joelozan         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:59:02 by joelozan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # define HEX_LC "0123456789abcdef"
 # define HEX_UC "0123456789ABCDEF"
 
-int		ft_printf(char const *s, ...);
-int	    ft_putchar_pf(char c);
-int	    ft_putstr_pf(char *s);
-int	    ft_putnbr_pf(int n);
-int	    ft_putuint_pf(unsigned int n);
-int 	ft_puthex_pf(unsigned long int n, char *base);
-int 	ft_putptr_pf(void *ptr);
+int	ft_printf(char const *s, ...);
+int	ft_putchar_pf(char c);
+int	ft_putstr_pf(char *s);
+int	ft_putnbr_pf(int n);
+int	ft_putuint_pf(unsigned int n);
+int	ft_puthex_pf(unsigned long int n, char *base);
+int	ft_putptr_pf(void *ptr);
 
 #endif
