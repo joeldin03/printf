@@ -6,7 +6,7 @@
 /*   By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:43:23 by joelozan          #+#    #+#             */
-/*   Updated: 2024/02/02 18:04:57 by joelozan         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:09:23 by joelozan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_putnbr_pf(int n)
     if (n < 0)
     {
         counter += ft_putchar_pf('-');
+		if (counter == -1)
+			return (-1);
         n = -n;
     }
     if (n >= 10)

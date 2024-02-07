@@ -6,7 +6,7 @@
 /*   By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:43:11 by joelozan          #+#    #+#             */
-/*   Updated: 2024/02/02 18:04:47 by joelozan         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:00:04 by joelozan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int	ft_putchar_pf(char c)
 {
-	return (write (1, &c, 1));
+	if (write (1, &c, 1) == -1)
+		return (-1);
+	else
+		return (1);
 }

@@ -23,7 +23,7 @@ int	    ft_putchar_pf(char c);
 int	    ft_putstr_pf(char *s);
 int	    ft_putnbr_pf(int n);
 int	    ft_putuint_pf(unsigned int n);
-int 	ft_puthex_pf(unsigned int n, char *base);
+int 	ft_puthex_pf(unsigned long int n, char *base);
 int 	ft_putptr_pf(void *ptr);
 
 #endif
