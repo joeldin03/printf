@@ -6,36 +6,16 @@
 /*   By: joelozan <joelozan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:42:04 by joelozan          #+#    #+#             */
-/*   Updated: 2024/02/02 18:05:06 by joelozan         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:08:20 by joelozan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	len_number(long n)
+int	ft_putuint_pf(unsigned int n, int *count)
 {
-	int	len;
-
-	len = 0;
-	if (n < 0)
-		n = -n;
-	if (!n)
-		return (1);
-	while (n > 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putuint_pf(unsigned int n)
-{
-	unsigned long	longn;
-
-	longn = n;
-	if (longn >= 10)
-		ft_putuint_pf(n / 10);
-	ft_putchar_pf('0' + longn % 10);
-	return (len_number(n));
+	if (n >= 10 && *count != -1)
+		ft_putuint_pf(n / 10, count);
+	ft_putchar_pf('0' + n % 10, count);
+	return (*count);
 }

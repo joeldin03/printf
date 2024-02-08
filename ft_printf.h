@@ -19,11 +19,11 @@
 # define HEX_UC "0123456789ABCDEF"
 
 int	ft_printf(char const *s, ...);
-int	ft_putchar_pf(char c);
-int	ft_putstr_pf(char *s);
-int	ft_putnbr_pf(int n);
-int	ft_putuint_pf(unsigned int n);
-int	ft_puthex_pf(unsigned long int n, char *base);
-int	ft_putptr_pf(void *ptr);
+int	ft_putchar_pf(char c, int *count);
+int	ft_putstr_pf(char *s, int *count);
+int	ft_putnbr_pf(int n, int *count);
+int	ft_putuint_pf(unsigned int n, int *count);
+int	ft_puthex_pf(unsigned long int n, char *base, int *count);
+int	ft_putptr_pf(unsigned long ptr, int *count);
 
 #endif
